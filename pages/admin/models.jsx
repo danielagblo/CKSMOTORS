@@ -24,6 +24,7 @@ function empty() {
     topSpeed: '',
     zeroToSixty: '',
     rate: '',
+    features: '',
     specs: {
       battery: '',
       drive: '',
@@ -134,7 +135,8 @@ export default function AdminModels() {
         charging: item.specs?.charging || '',
         transmission: item.specs?.transmission || '',
         fuelType: item.specs?.fuelType || ''
-      }
+      },
+      features: Array.isArray(item.features) ? item.features.join(', ') : (item.features || '')
     })
     setEditingId(item.id)
     setImagePreview(item.image || '')
@@ -335,6 +337,15 @@ export default function AdminModels() {
 
               <label className="field-label">Description</label>
               <textarea name="desc" placeholder="Brief description of the vehicle" value={form.desc} onChange={onChange} style={{ minHeight: 100 }} />
+
+              <label className="field-label" style={{ marginTop: 16 }}>Included Features (comma separated)</label>
+              <textarea
+                name="features"
+                placeholder="e.g. Autopilot, Premium Audio, Climate Control"
+                value={form.features}
+                onChange={onChange}
+                style={{ minHeight: 80, fontSize: 13 }}
+              />
             </div>
 
             <div className="form-column">

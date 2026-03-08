@@ -70,7 +70,7 @@ export default function ContactPage() {
       {/* Header Section */}
       <section style={{ padding: isMobile ? '60px 20px' : '80px 60px', background: 'linear-gradient(180deg, rgba(184,144,51,0.05) 0%, transparent 100%)', textAlign: 'center' }}>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} style={{ maxWidth: 800, margin: '0 auto' }}>
-          <h1 style={{ fontSize: isMobile ? 40 : 56, marginBottom: 20, color: '#fff', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: isMobile ? 40 : 56, marginBottom: 20, color: 'var(--heading)', letterSpacing: '-0.02em' }}>
             Get in Touch
           </h1>
           <p style={{ color: 'var(--muted)', fontSize: isMobile ? 16 : 18, lineHeight: 1.6 }}>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div style={{ color: 'var(--muted)', fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Call Us (24/7 Support)</div>
-                    <div style={{ color: '#fff', fontSize: 16, fontWeight: 600 }}>{settings.supportPhone}</div>
+                    <div style={{ color: 'var(--text)', fontSize: 16, fontWeight: 600 }}>{settings.supportPhone}</div>
                   </div>
                 </div>
 
@@ -103,7 +103,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div style={{ color: 'var(--muted)', fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>Headquarters</div>
-                    <div style={{ color: '#fff', fontSize: 16, fontWeight: 600 }}>{settings.headquarters}</div>
+                    <div style={{ color: 'var(--text)', fontSize: 16, fontWeight: 600 }}>{settings.headquarters}</div>
                   </div>
                 </div>
 
@@ -113,21 +113,21 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <div style={{ color: 'var(--muted)', fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 4 }}>General Inquiries</div>
-                    <div style={{ color: '#fff', fontSize: 16, fontWeight: 600 }}>{settings.adminEmail}</div>
+                    <div style={{ color: 'var(--text)', fontSize: 16, fontWeight: 600 }}>{settings.adminEmail}</div>
                   </div>
                 </div>
               </div>
             </motion.div>
 
             <motion.div variants={fadeUp} style={{ padding: 32, background: 'rgba(212, 175, 55, 0.05)', borderRadius: 24, border: '1px solid rgba(212, 175, 55, 0.15)' }}>
-              <h4 style={{ fontSize: 18, color: '#fff', marginBottom: 16 }}>Office Hours</h4>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12, borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: 12 }}>
+              <h4 style={{ fontSize: 18, color: 'var(--heading)', marginBottom: 16 }}>Office Hours</h4>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12, borderBottom: '1px solid var(--glass-border)', paddingBottom: 12 }}>
                 <span style={{ color: 'var(--muted)' }}>Monday - Friday</span>
-                <span style={{ color: '#fff', fontWeight: 500 }}>8:00 AM - 6:00 PM</span>
+                <span style={{ color: 'var(--text)', fontWeight: 500 }}>8:00 AM - 6:00 PM</span>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12, borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: 12 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12, borderBottom: '1px solid var(--glass-border)', paddingBottom: 12 }}>
                 <span style={{ color: 'var(--muted)' }}>Saturday</span>
-                <span style={{ color: '#fff', fontWeight: 500 }}>9:00 AM - 2:00 PM</span>
+                <span style={{ color: 'var(--text)', fontWeight: 500 }}>9:00 AM - 2:00 PM</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <span style={{ color: 'var(--muted)' }}>Sunday</span>
@@ -141,31 +141,31 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            style={{ padding: isMobile ? 32 : 48, background: 'rgba(10,10,10,0.6)', backdropFilter: 'blur(20px)', borderRadius: 24, border: '1px solid rgba(255,255,255,0.05)', boxShadow: '0 20px 40px rgba(0,0,0,0.4)' }}
+            style={{ padding: isMobile ? 32 : 48, background: 'var(--card)', backdropFilter: 'blur(20px)', borderRadius: 24, border: '1px solid var(--glass-border)', boxShadow: 'var(--shadow)' }}
           >
-            <h3 style={{ fontSize: 24, marginBottom: 8, color: '#fff' }}>Send a Message</h3>
+            <h3 style={{ fontSize: 24, marginBottom: 8, color: 'var(--heading)' }}>Send a Message</h3>
             <p style={{ color: 'var(--muted)', marginBottom: 32, fontSize: 15 }}>A reservation specialist will follow up shortly.</p>
 
             <form onSubmit={handleSubmit} style={{ display: 'grid', gap: 20 }}>
               <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 20 }}>
                 <div>
                   <label style={{ display: 'block', fontSize: 12, color: 'var(--muted)', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Full Name *</label>
-                  <input name="name" placeholder="John Doe" required style={{ width: '100%', padding: '14px 16px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, color: '#fff', outline: 'none' }} />
+                  <input name="name" placeholder="John Doe" required style={{ width: '100%', padding: '14px 16px', background: 'var(--glass)', border: '1px solid var(--glass-border)', borderRadius: 12, color: 'var(--text)', outline: 'none' }} />
                 </div>
                 <div>
                   <label style={{ display: 'block', fontSize: 12, color: 'var(--muted)', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Email Address *</label>
-                  <input name="email" type="email" placeholder="john@example.com" required style={{ width: '100%', padding: '14px 16px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, color: '#fff', outline: 'none' }} />
+                  <input name="email" type="email" placeholder="john@example.com" required style={{ width: '100%', padding: '14px 16px', background: 'var(--glass)', border: '1px solid var(--glass-border)', borderRadius: 12, color: 'var(--text)', outline: 'none' }} />
                 </div>
               </div>
 
               <div>
                 <label style={{ display: 'block', fontSize: 12, color: 'var(--muted)', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Phone Number</label>
-                <input name="phone" placeholder="+233..." style={{ width: '100%', padding: '14px 16px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, color: '#fff', outline: 'none' }} />
+                <input name="phone" placeholder="+233..." style={{ width: '100%', padding: '14px 16px', background: 'var(--glass)', border: '1px solid var(--glass-border)', borderRadius: 12, color: 'var(--text)', outline: 'none' }} />
               </div>
 
               <div>
                 <label style={{ display: 'block', fontSize: 12, color: 'var(--muted)', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Your Message *</label>
-                <textarea name="message" placeholder="How can we help you?" rows={5} required style={{ width: '100%', padding: '14px 16px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, color: '#fff', outline: 'none', resize: 'vertical' }} />
+                <textarea name="message" placeholder="How can we help you?" rows={5} required style={{ width: '100%', padding: '14px 16px', background: 'var(--glass)', border: '1px solid var(--glass-border)', borderRadius: 12, color: 'var(--text)', outline: 'none', resize: 'vertical' }} />
               </div>
 
               {status && (

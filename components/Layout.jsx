@@ -8,7 +8,7 @@ export default function Layout({ children }){
       </div>
 
       <a
-        href="https://wa.me/233501326989"
+        href="https://wa.me/2330204001146"
         className="whatsapp-float"
         target="_blank"
         rel="noopener noreferrer"

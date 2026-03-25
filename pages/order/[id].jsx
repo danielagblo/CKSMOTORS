@@ -430,7 +430,7 @@ export default function OrderPage() {
               <h3 style={{ marginBottom: 16 }}>Features & Specifications</h3>
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
                 gap: 16
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -504,7 +504,7 @@ export default function OrderPage() {
                 <h4 style={{ marginBottom: 12, fontSize: 15 }}>Included Features</h4>
                 <div style={{
                   display: 'grid',
-                  gridTemplateColumns: 'repeat(2, 1fr)',
+                  gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)',
                   gap: 10,
                   color: 'var(--muted)',
                   fontSize: 14
@@ -575,7 +575,7 @@ export default function OrderPage() {
                   />
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 12 }}>
                   <div>
                     <label style={{ display: 'block', marginBottom: 6, fontSize: 13, fontWeight: 600 }}>
                       Email *
@@ -622,7 +622,7 @@ export default function OrderPage() {
                 </div>
 
                 {/* Rental Period */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 12 }}>
                   <div>
                     <label style={{ display: 'block', marginBottom: 6, fontSize: 13, fontWeight: 600 }}>
                       Start Date *
@@ -797,7 +797,7 @@ export default function OrderPage() {
         <div style={{ marginTop: 60 }}>
           <h3 style={{ fontSize: 28, marginBottom: 32, textAlign: 'center' }}>Important Rental Information</h3>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: 24 }}>
             {/* Chauffeur Service */}
             <div style={{ padding: 24, background: 'var(--surface)', borderRadius: 16, border: '1px solid var(--border)' }}>
               <div style={{ fontSize: 32, marginBottom: 12 }}>👨‍✈️</div>
@@ -867,7 +867,7 @@ export default function OrderPage() {
             border: '1px solid var(--border)'
           }}>
             <h4 style={{ fontSize: 20, marginBottom: 20, textAlign: 'center' }}>Rental Conditions</h4>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, fontSize: 14, color: 'var(--muted)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, 1fr)', gap: 16, fontSize: 14, color: 'var(--muted)' }}>
               <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                 <span style={{ color: 'var(--accent)' }}>✓</span>
                 <div>All vehicles comprehensively insured with valid licenses</div>

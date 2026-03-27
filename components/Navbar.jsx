@@ -34,7 +34,7 @@ export default function Navbar() {
       <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
           <img
-            src="/cks-logo.png"
+            src="/favicon.png"
             alt="CKS Motors"
             style={{
               width: 64,

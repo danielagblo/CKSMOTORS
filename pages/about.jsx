@@ -43,7 +43,7 @@ export default function AboutPage() {
       <section style={{ padding: isMobile ? '60px 20px' : '80px 60px', background: 'linear-gradient(180deg, rgba(184,144,51,0.05) 0%, transparent 100%)', textAlign: 'center' }}>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} style={{ maxWidth: 800, margin: '0 auto' }}>
           <h1 style={{ fontSize: isMobile ? 40 : 56, marginBottom: 20, color: 'var(--text)', letterSpacing: '-0.02em' }}>
-            About <span style={{ color: '#D4AF37' }}>EKG</span>
+            About <span style={{ color: '#D4AF37' }}>CKS</span>
           </h1>
           <p style={{ color: 'var(--muted)', fontSize: isMobile ? 16 : 18, lineHeight: 1.6 }}>
             A wholly owned Ghanaian company providing premium car rental, logistics, travel and tour services tailored for executives and individuals.
@@ -71,7 +71,7 @@ export default function AboutPage() {
             }}>Company Profile</div>
             <h3 style={{ fontSize: 32, marginBottom: 24, color: 'var(--text)' }}>Driven by Excellence</h3>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8, fontSize: 16 }}>
-              EKG Transport and Logistics is duly incorporated under the Laws of the Republic of Ghana to provide car rental, logistics, travel and tour services. We are committed to fully meeting and satisfying our customers' requirements and expectations by providing friendly, reliable, cost-effective, timely, and high-quality rental services.
+              CKS Motors is duly incorporated under the Laws of the Republic of Ghana to provide car rental, logistics, travel and tour services. We are committed to fully meeting and satisfying our customers' requirements and expectations by providing friendly, reliable, cost-effective, timely, and high-quality rental services.
             </p>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8, fontSize: 16, marginTop: 16 }}>
               Our principle of flexibility, accessibility and affordability has helped the company to succeed to this day. Our drivers are carefully screened and undergo rigorous training and continuous professional development, guaranteeing the very best in customer service and safety.
@@ -79,7 +79,7 @@ export default function AboutPage() {
           </motion.div>
 
           <motion.div variants={fadeUp} style={{ padding: isMobile ? 32 : 48, background: 'rgba(212, 175, 55, 0.05)', borderRadius: 24, border: '1px solid rgba(212, 175, 55, 0.15)' }}>
-            <h3 style={{ fontSize: 24, marginBottom: 24, color: '#D4AF37' }}>Why Choose EKG?</h3>
+            <h3 style={{ fontSize: 24, marginBottom: 24, color: '#D4AF37' }}>Why Choose CKS?</h3>
             <div style={{ display: 'grid', gap: 16 }}>
               {[
                 "Wide selection of cars with full range accessories for comfort and safety",

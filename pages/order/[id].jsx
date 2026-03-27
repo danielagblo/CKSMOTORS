@@ -853,7 +853,7 @@ export default function OrderPage() {
                 </div>
                 <div style={{ marginTop: 8, padding: 10, background: 'rgba(255, 80, 80, 0.1)', borderRadius: 6 }}>
                   <strong style={{ color: 'var(--primary)', fontSize: 13 }}>⚠️ Important:</strong>
-                  <div style={{ fontSize: 12, marginTop: 4 }}>Do NOT allow unauthorized repairs. Only EKG-approved workshops.</div>
+                  <div style={{ fontSize: 12, marginTop: 4 }}>Do NOT allow unauthorized repairs. Only CKS-approved workshops.</div>
                 </div>
               </div>
             </div>

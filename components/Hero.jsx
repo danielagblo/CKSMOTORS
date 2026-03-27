@@ -81,7 +81,7 @@ export default function Hero() {
                         zIndex: 0
                     }}
                 >
-                    <source src="https://cdn.coverr.co/videos/coverr-luxury-car-driving-through-city-at-night-5273/1080p.mp4" type="video/mp4" />
+                    <source src="https://cdn.coverr.co/videos/coverr-driving-luxury-car-at-night-1959/1080p.mp4" type="video/mp4" />
                 </motion.video>
             ) : (
                 <motion.div
@@ -163,7 +163,7 @@ export default function Hero() {
                             textTransform: 'uppercase',
                             fontWeight: 700
                         }}>
-                            Private Mobility Collection
+                            Executive Automotive Portfolio
                         </div>
                         <motion.h1 style={{
                             fontSize: isMobile ? 32 : 68,
@@ -174,13 +174,13 @@ export default function Hero() {
                             letterSpacing: '-0.02em',
                             color: '#ffffff'
                         }}>
-                            Luxury Mobility, <br /><span style={{
+                            Automotive Elegance, <br /><span style={{
                                 background: 'linear-gradient(135deg, #D4AF37, #FCEABB)',
                                 WebkitBackgroundClip: 'text',
                                 backgroundClip: 'text',
                                 color: 'transparent',
                                 textShadow: 'none'
-                            }}>Curated for Leaders</span>
+                            }}>Engineered for You</span>
                         </motion.h1>
                     </div>
                 </motion.div>
@@ -201,7 +201,7 @@ export default function Hero() {
                         lineHeight: isMobile ? 1.55 : 1.7
                     }}
                 >
-                    Premium car rental, logistics, travel and tour services across Ghana. Experience comfort and safety with our comprehensively insured fleet and professional defensive drivers.
+                    Redefining transport logistics and executive mobility. Discover a curated selection of premium vehicles, driven by professional chauffeurs to deliver unparalleled safety and comfort.
                 </motion.p>
 
                 {/* Feature Stats */}

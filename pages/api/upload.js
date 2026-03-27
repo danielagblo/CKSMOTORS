@@ -22,7 +22,7 @@ async function handler(req, res) {
 
       try {
         const result = await cloudinary.uploader.upload(file.filepath, {
-          folder: 'ekgsite/uploads',
+          folder: 'ckssite/uploads',
         })
         res.json({ url: result.secure_url, public_id: result.public_id })
         resolve()

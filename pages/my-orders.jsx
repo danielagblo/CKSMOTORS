@@ -101,7 +101,7 @@ export default function MyOrders() {
     const removeContact = (c) => {
         const newSeeds = seeds.filter(s => s !== c)
         if (typeof window !== 'undefined') {
-            localStorage.setItem('ekg_linked_contacts_v1', JSON.stringify(newSeeds))
+            localStorage.setItem('cks_linked_contacts_v1', JSON.stringify(newSeeds))
         }
         setSeeds(newSeeds)
         setOrders(null)
@@ -110,7 +110,7 @@ export default function MyOrders() {
     return (
         <Layout>
             <Head>
-                <title>Order History | EKG Luxury Rentals</title>
+                <title>Order History | CKS Luxury Rentals</title>
             </Head>
 
             <div className="my-orders-page" style={{
@@ -228,7 +228,7 @@ export default function MyOrders() {
                                     </div>
                                     <h2 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--text)', marginBottom: 16 }}>Find Your Legacy</h2>
                                     <p style={{ color: 'var(--muted)', marginBottom: 40, maxWidth: 500, margin: '0 auto 40px', lineHeight: 1.6 }}>
-                                        Enter any email or phone number used during your EKG Luxury bookings. We will automatically link and secure your entire fleet history.
+                                        Enter any email or phone number used during your CKS Luxury bookings. We will automatically link and secure your entire fleet history.
                                     </p>
                                     <form onSubmit={handleManualAdd} style={{ maxWidth: 500, margin: '0 auto', display: 'flex', gap: 12 }}>
                                         <div style={{ position: 'relative', flex: 1 }}>
@@ -377,7 +377,7 @@ export default function MyOrders() {
                                     <Box size={40} style={{ color: 'var(--muted)', marginBottom: 20, margin: '0 auto 20px' }} />
                                     <p style={{ color: 'var(--muted)', fontSize: '1.1rem' }}>We couldn't find any confirmed luxury rentals linked to these profiles.</p>
                                     <button
-                                        onClick={() => { setSeeds([]); localStorage.removeItem('ekg_linked_contacts_v1'); }}
+                                        onClick={() => { setSeeds([]); localStorage.removeItem('cks_linked_contacts_v1'); }}
                                         style={{ marginTop: 24, color: '#D4AF37', background: 'none', border: '1px solid rgba(212, 175, 55, 0.3)', padding: '10px 24px', borderRadius: 999, cursor: 'pointer', fontWeight: 600, fontSize: 13 }}
                                     >
                                         Clear History & Start Fresh

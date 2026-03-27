@@ -5,8 +5,8 @@ import { CldImage, getCldImageUrl as nextGetCldImageUrl } from 'next-cloudinary'
  * Standard utility to parse URLs or local paths into Cloudinary public IDs.
  */
 export const getCldPublicId = (url) => {
-    if (!url) return 'ekgsite/assets/hero'
-    if (typeof url !== 'string') return 'ekgsite/assets/hero'
+    if (!url) return 'cksmotors/assets/hero'
+    if (typeof url !== 'string') return 'cksmotors/assets/hero'
 
     if (url.includes('cloudinary.com')) {
         const parts = url.split('/')
@@ -24,15 +24,15 @@ export const getCldPublicId = (url) => {
     // Local paths migration
     if (url.includes('/uploads/')) {
         const filename = url.split('/uploads/')[1]
-        return `ekgsite/uploads/${filename.split('.')[0]}`
+        return `cksmotors/uploads/${filename.split('.')[0]}`
     }
     if (url.startsWith('/assets/')) {
         const filename = url.split('/assets/')[1]
-        return `ekgsite/assets/${filename.split('.')[0]}`
+        return `cksmotors/assets/${filename.split('.')[0]}`
     }
 
-    // Direct public IDs (e.g. 'ekgsite/assets/hero')
-    if (url.startsWith('ekgsite/')) return url
+    // Direct public IDs (e.g. 'cksmotors/assets/hero')
+    if (url.startsWith('cksmotors/')) return url
 
     return url
 }

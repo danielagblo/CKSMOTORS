@@ -74,7 +74,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p style={{ color: 'var(--muted)', fontSize: isMobile ? 16 : 18, lineHeight: 1.6 }}>
-            Whether you need a bespoke transport solution, a fleet for corporate logistics, or a private chauffeur, the team at EKG Transport & Logistics is ready to assist you.
+            Whether you need a bespoke transport solution, a fleet for corporate logistics, or a private chauffeur, the team at CKS Motors is ready to assist you.
           </p>
         </motion.div>
       </section>

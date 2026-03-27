@@ -28,7 +28,7 @@ async function migrate() {
             const publicId = `assets/${path.parse(file).name}`;
             await cloudinary.uploader.upload(filePath, {
                 public_id: publicId,
-                folder: 'ekgsite',
+                folder: 'cksite',
                 overwrite: true,
             });
             console.log(`Successfully uploaded ${file} as ${publicId}`);
@@ -49,7 +49,7 @@ async function migrate() {
             try {
                 await cloudinary.uploader.upload(filePath, {
                     public_id: path.parse(file).name,
-                    folder: 'ekgsite/uploads',
+                    folder: 'ckssite/uploads',
                     overwrite: true,
                 });
             } catch (error) {

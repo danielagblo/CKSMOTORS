@@ -130,7 +130,7 @@ export default function AdminSettings() {
                                     type="email"
                                     value={settings.adminEmail}
                                     onChange={(e) => setSettings({ ...settings, adminEmail: e.target.value })}
-                                    placeholder="admin@ekgsite.com"
+                                    placeholder="admin@ckssite.com"
                                     style={{
                                         width: '100%',
                                         padding: '16px 20px',
@@ -156,7 +156,7 @@ export default function AdminSettings() {
                                     type="email"
                                     value={settings.fromEmail}
                                     onChange={(e) => setSettings({ ...settings, fromEmail: e.target.value })}
-                                    placeholder="no-reply@ekgsite.com"
+                                    placeholder="no-reply@ckssite.com"
                                     style={{
                                         width: '100%',
                                         padding: '16px 20px',

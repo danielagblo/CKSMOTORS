@@ -53,7 +53,7 @@ export default function AdminLayout({ title, children }) {
     <div className="admin-shell">
       <aside className="admin-sidebar">
         <div className="sidebar-logo-area">
-          <div className="sidebar-logo">EKG <span style={{ color: 'var(--primary)' }}>LOGISTICS</span></div>
+          <div className="sidebar-logo">CKS <span style={{ color: 'var(--primary)' }}>MOTORS</span></div>
           <div className="admin-badge" style={{ marginLeft: 8 }}>HQ</div>
         </div>
 

@@ -40,13 +40,13 @@ export default function AdminLogin() {
   return (
     <div className="login-page">
       <Head>
-        <title>Admin Login | EKG Logistics</title>
+        <title>Admin Login | CKS Motors</title>
       </Head>
 
       <div className="login-container">
         <div className="login-card">
           <div className="login-brand">
-            <div className="brand-logo">EKG</div>
+            <div className="brand-logo">CKS</div>
             <h1 className="brand-title">Welcome Back</h1>
             <p className="brand-subtitle">Sign in to access your dashboard</p>
           </div>

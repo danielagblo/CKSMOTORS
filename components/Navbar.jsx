@@ -34,20 +34,20 @@ export default function Navbar() {
       <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
           <img
-            src="/logo-transparent.png"
-            alt="EKG Logistics and transport"
+            src="/cks-logo.png"
+            alt="CKS Motors"
             style={{
               width: 64,
               height: 64,
               objectFit: 'contain',
               background: 'transparent',
               display: 'block',
-              transform: 'scale(1.6)',
+              transform: 'scale(1.2)',
               transformOrigin: 'center center'
             }}
           />
           <div>
-            <div className="brand">EKG<span>Logistics and transport</span></div>
+            <div className="brand">CKS<span>Motors</span></div>
             <div style={{ color: 'var(--muted)', fontSize: 12, lineHeight: 1 }}>Luxury Electric Vehicles</div>
           </div>
         </div>

@@ -35,7 +35,7 @@ export default async function handler(req, res) {
                     subject: `Contact Form Inquiry: ${subject || 'New Message'} - from ${name}`,
                     html: `
                         <div style="font-family: sans-serif; line-height: 1.6; color: #333; max-width: 600px;">
-                            <h2 style="color: #D4AF37;">New Inquiry from EKG Site</h2>
+                            <h2 style="color: #D4AF37;">New Inquiry from CKS Site</h2>
                             <p><strong>From:</strong> ${name} &lt;${email}&gt;</p>
                             <p><strong>Subject:</strong> ${subject || 'N/A'}</p>
                             <hr style="border: 0; border-top: 1px solid #eee;" />
@@ -72,7 +72,7 @@ export default async function handler(req, res) {
 
         const fromEmail = settings?.fromEmail || process.env.FROM_EMAIL || smtpUser
         await transporter.sendMail({
-            from: `"EKG Contact Form" <${fromEmail}>`,
+            from: `"CKS Contact Form" <${fromEmail}>`,
             to: adminEmail,
             replyTo: email,
             subject: `Contact Form: ${subject || 'New Inquiry'} from ${name}`,

@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
       </main>
       {!hideLayout && <Footer />}
       <a
-        href="https://wa.me/2330204001146"
+        href="https://wa.me/2330200000000"
         className="whatsapp-float"
         target="_blank"
         rel="noopener noreferrer"

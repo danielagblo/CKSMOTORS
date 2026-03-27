@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import CldOptimizedImage from '../components/CldOptimizedImage'
 import { getTestimonials, getNews } from '../lib/siteContentApi'
 import TrustBadges from '../components/TrustBadges'
+import Features from '../components/Features'
 
 
 function Testimonials({ testimonials }) {
@@ -128,11 +129,16 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div style={{ display: 'flex', justifyContent: 'center', padding: '40px 0' }}>
+      <div style={{ padding: '60px 0', background: 'var(--bg)' }}>
         <TrustBadges />
       </div>
+      <div className="section-divider" style={{ opacity: 0.1 }} />
+      <Features />
+      <div className="section-divider" style={{ opacity: 0.1 }} />
       <Products limit={3} />
+      <div className="section-divider" style={{ opacity: 0.1 }} />
       <Testimonials testimonials={testimonials} />
+      <div className="section-divider" style={{ opacity: 0.1 }} />
       <News newsItems={newsItems} />
     </>
   )

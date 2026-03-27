@@ -3,9 +3,9 @@ import { useRouter } from 'next/router'
 import { getCldImageUrl } from './CldOptimizedImage'
 import React from 'react'
 import IMAGES from '../data/images'
+import { Shield, MapPin, PhoneCall, Clock } from 'lucide-react'
 
 const heading = { hidden: { x: -40, opacity: 0 }, show: { x: 0, opacity: 1 } }
-const cta = { hidden: { scale: .96, opacity: 0 }, show: { scale: 1, opacity: 1 } }
 
 export default function Hero() {
     const router = useRouter()
@@ -33,14 +33,7 @@ export default function Hero() {
     React.useEffect(() => {
         if (videoRef.current) {
             videoRef.current.play().catch(err => {
-                // Ignore AbortError which occurs when the element is removed
-                if (err && err.name === 'AbortError') {
-                    setVideoError(true)
-                    return
-                }
-                // Log other errors for diagnostics
-                // eslint-disable-next-line no-console
-                console.info('Video autoplay failed:', err)
+                if (err && err.name === 'AbortError') return
                 setVideoError(true)
             })
         }
@@ -49,289 +42,108 @@ export default function Hero() {
     return (
         <section style={{
             position: 'relative',
-            minHeight: isMobile ? '70vh' : '85vh',
-            padding: isMobile ? '120px 0 100px' : '160px 0 140px',
+            minHeight: isMobile ? '80vh' : '90vh',
+            padding: isMobile ? '100px 0 80px' : '0',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            background: '#000'
         }}>
-            {/* Video Background or Fallback Image */}
+            {/* Background elements */}
             {!videoError ? (
                 <motion.video
-                    ref={videoRef}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
+                    ref={videoRef} autoPlay loop muted playsInline preload="auto"
                     onError={() => setVideoError(true)}
-                    initial={{ scale: 1.06 }}
-                    animate={{ scale: 1.12 }}
-                    transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+                    initial={{ scale: 1.1 }}
+                    animate={{ scale: 1.2 }}
+                    transition={{ duration: 30, repeat: Infinity, repeatType: 'reverse' }}
                     style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        objectPosition: isMobile ? '62% center' : 'center',
-                        filter: 'brightness(0.9) contrast(1.05) saturate(1.1)',
-                        zIndex: 0
+                        position: 'absolute', inset: 0, width: '100%', height: '100%',
+                        objectFit: 'cover', zIndex: 0, filter: 'brightness(0.6) contrast(1.1)'
                     }}
                 >
                     <source src="https://cdn.coverr.co/videos/coverr-driving-luxury-car-at-night-1959/1080p.mp4" type="video/mp4" />
                 </motion.video>
             ) : (
-                <motion.div
-                    initial={{ scale: 1.05 }}
-                    animate={{ scale: 1.1 }}
-                    transition={{ duration: 18, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
-                    style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        width: '100%',
-                        height: '100%',
-                        background: `url(${heroBgUrl})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: isMobile ? '62% center' : 'center',
-                        filter: 'brightness(0.9) contrast(1.05) saturate(1.08)',
-                        zIndex: 0
-                    }}></motion.div>
+                <div style={{ position: 'absolute', inset: 0, background: `url(${heroBgUrl}) center/cover`, zIndex: 0, filter: 'brightness(0.6)' }} />
             )}
 
-            {/* Dark overlay */}
-            <div style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(115deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.8) 48%, rgba(10,10,10,0.9) 100%)',
-                zIndex: 1
-            }}></div>
+            {/* Overlays for depth */}
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%)', zIndex: 1 }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 20% 50%, rgba(227, 6, 19, 0.1), transparent 40%)', zIndex: 1 }} />
 
-            <div style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'radial-gradient(circle at 68% 22%, rgba(212, 175, 55, 0.1), transparent 40%), radial-gradient(circle at 50% 90%, rgba(227, 6, 19, 0.1), transparent 50%)',
-                zIndex: 1
-            }}></div>
-
-            <div style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, transparent 20%, rgba(10,10,10,0.9) 100%)',
-                zIndex: 1
-            }}></div>
-
-            <div style={{
-                maxWidth: 1400,
-                width: '100%',
-                padding: isMobile ? '0 20px' : '0 64px',
-                textAlign: 'center',
-                zIndex: 2
-            }}>
-                <motion.div
-                    variants={heading}
-                    initial="hidden"
-                    animate="show"
-                    transition={{ delay: 0.18, duration: 0.6 }}
-                >
-                    <div style={{
-                        maxWidth: isMobile ? '100%' : 900,
-                        margin: '0 auto',
-                        padding: isMobile ? '16px 14px' : '28px 28px',
-                        borderRadius: isMobile ? 14 : 24,
-                        background: 'rgba(10,10,10,0.4)',
-                        backdropFilter: 'blur(16px)',
-                        WebkitBackdropFilter: 'blur(16px)',
-                        border: '1px solid rgba(255,255,255,0.05)',
-                        boxShadow: '0 30px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1)'
-                    }}>
-                        <div style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: 8,
-                            borderRadius: 999,
-                            padding: isMobile ? '6px 12px' : '8px 16px',
-                            marginBottom: isMobile ? 12 : 20,
-                            background: 'rgba(212, 175, 55, 0.1)',
-                            border: '1px solid rgba(212, 175, 55, 0.2)',
-                            color: '#D4AF37',
-                            fontSize: isMobile ? 11 : 13,
-                            letterSpacing: '0.15em',
-                            textTransform: 'uppercase',
-                            fontWeight: 700
-                        }}>
-                            Executive Automotive Portfolio
+            <div style={{ maxWidth: 1400, width: '100%', margin: '0 auto', padding: isMobile ? '0 24px' : '0 64px', position: 'relative', zIndex: 2, display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', gap: 64 }}>
+                
+                {/* Content Side */}
+                <div style={{ flex: 1, textAlign: isMobile ? 'center' : 'left' }}>
+                    <motion.div variants={heading} initial="hidden" animate="show" transition={{ duration: 0.8 }}>
+                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '8px 16px', background: 'rgba(212, 175, 55, 0.1)', border: '1px solid rgba(212, 175, 55, 0.2)', borderRadius: 99, color: '#D4AF37', fontSize: 13, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 24 }}>
+                           <Shield size={14} /> The Gold Standard of Mobility
                         </div>
-                        <motion.h1 style={{
-                            fontSize: isMobile ? 32 : 68,
-                            fontWeight: 900,
-                            lineHeight: 1.1,
-                            marginBottom: isMobile ? 14 : 18,
-                            textShadow: '0 10px 30px rgba(0,0,0,0.8)',
-                            letterSpacing: '-0.02em',
-                            color: '#ffffff'
-                        }}>
-                            Automotive Elegance, <br /><span style={{
-                                background: 'linear-gradient(135deg, #D4AF37, #FCEABB)',
-                                WebkitBackgroundClip: 'text',
-                                backgroundClip: 'text',
-                                color: 'transparent',
-                                textShadow: 'none'
-                            }}>Engineered for You</span>
-                        </motion.h1>
-                    </div>
-                </motion.div>
+                        <h1 style={{ fontSize: isMobile ? 42 : 72, fontWeight: 900, lineHeight: 1.05, marginBottom: 24, color: '#fff' }}>
+                            Precision Logistics. <br />
+                            <span className="text-gradient-gold">Absolute Luxury.</span>
+                        </h1>
+                        <p style={{ fontSize: isMobile ? 16 : 20, color: 'rgba(255,255,255,0.8)', marginBottom: 40, maxWidth: 600, lineHeight: 1.6 }}>
+                            Redefining transport logistics and executive mobility. Discover a curated selection of premium vehicles, driven by professional chauffeurs to deliver unparalleled safety and comfort.
+                        </p>
+                        
+                        <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: 16, justifyContent: isMobile ? 'center' : 'flex-start' }}>
+                            <button className="primary" onClick={() => router.push('/models')} style={{ padding: '18px 40px', fontSize: 16, borderRadius: 99, border: 0, fontWeight: 800, cursor: 'pointer' }}>
+                                Explore The Fleet
+                            </button>
+                            <button className="ghost" onClick={() => router.push('/contact')} style={{ padding: '18px 40px', fontSize: 16, borderRadius: 99, fontWeight: 800, cursor: 'pointer' }}>
+                                Reserve Consultation
+                            </button>
+                        </div>
+                    </motion.div>
+                </div>
 
-                <motion.p
-                    variants={heading}
-                    initial="hidden"
-                    animate="show"
-                    transition={{ delay: 0.32, duration: 0.6 }}
-                    style={{
-                        fontSize: isMobile ? 15 : 20,
-                        color: 'rgba(255,255,255,0.95)',
-                        marginBottom: isMobile ? 24 : 32,
-                        maxWidth: isMobile ? 560 : 760,
-                        margin: isMobile ? '12px auto 24px' : '16px auto 34px',
-                        textShadow: '0 4px 18px rgba(0,0,0,0.9)',
-                        fontWeight: 500,
-                        lineHeight: isMobile ? 1.55 : 1.7
-                    }}
-                >
-                    Redefining transport logistics and executive mobility. Discover a curated selection of premium vehicles, driven by professional chauffeurs to deliver unparalleled safety and comfort.
-                </motion.p>
-
-                {/* Feature Stats */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    style={{
-                        display: 'flex',
-                        gap: isMobile ? 12 : 24,
-                        justifyContent: 'center',
-                        flexWrap: 'wrap',
-                        marginTop: isMobile ? 32 : 48
-                    }}
-                >
-                    <div style={{
-                        padding: isMobile ? '12px 16px' : '16px 24px',
-                        background: 'rgba(10,10,10,0.6)',
-                        backdropFilter: 'blur(20px)',
-                        borderRadius: 16,
-                        border: '1px solid rgba(255,255,255,0.08)',
-                        boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
-                    }}>
-                        <div style={{ fontSize: isMobile ? 20 : 26, fontWeight: 800, color: '#D4AF37', marginBottom: 4 }}>24/7</div>
-                        <div style={{ fontSize: isMobile ? 10 : 11, color: '#8A8A8E', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Support Tracking</div>
-                    </div>
-                    <div style={{
-                        padding: isMobile ? '12px 16px' : '16px 24px',
-                        background: 'rgba(10,10,10,0.6)',
-                        backdropFilter: 'blur(20px)',
-                        borderRadius: 16,
-                        border: '1px solid rgba(255,255,255,0.08)',
-                        boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
-                    }}>
-                        <div style={{ fontSize: isMobile ? 20 : 26, fontWeight: 800, color: '#D4AF37', marginBottom: 4 }}>Brand New</div>
-                        <div style={{ fontSize: isMobile ? 10 : 11, color: '#8A8A8E', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Premium Fleet</div>
-                    </div>
-                    <div style={{
-                        padding: isMobile ? '12px 16px' : '16px 24px',
-                        background: 'rgba(212, 175, 55, 0.1)',
-                        backdropFilter: 'blur(20px)',
-                        borderRadius: 16,
-                        border: '1px solid rgba(212, 175, 55, 0.3)',
-                        boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
-                    }}>
-                        <div style={{ fontSize: isMobile ? 20 : 26, fontWeight: 800, color: '#D4AF37', marginBottom: 4 }}>Trained</div>
-                        <div style={{ fontSize: isMobile ? 10 : 11, color: '#F5F5F7', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Chauffeurs</div>
-                    </div>
-                </motion.div>
-
-                {/* CTA Buttons */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.9 }}
-                    style={{
-                        display: 'flex',
-                        flexDirection: isMobile ? 'column' : 'row',
-                        gap: isMobile ? 10 : 14,
-                        justifyContent: 'center',
-                        alignItems: isMobile ? 'stretch' : 'center',
-                        marginTop: isMobile ? 24 : 36,
-                        padding: isMobile ? '0 20px' : 0
-                    }}
-                >
-                    <button
-                        className="primary"
-                        onClick={() => router.push('/models')}
-                        style={{
-                            padding: isMobile ? '14px 28px' : '16px 36px',
-                            fontSize: isMobile ? 15 : 16,
-                            fontWeight: 800,
-                            borderRadius: 999,
-                            background: 'linear-gradient(135deg, #E30613, #ff4444)',
-                            border: 0,
-                            cursor: 'pointer',
-                            letterSpacing: '0.05em',
-                            color: '#fff',
-                            textTransform: 'uppercase'
-                        }}
-                    >
-                        Explore Collection
-                    </button>
-                    <button
-                        onClick={() => router.push('/contact')}
-                        style={{
-                            padding: isMobile ? '14px 28px' : '16px 36px',
-                            fontSize: isMobile ? 15 : 16,
-                            fontWeight: 800,
-                            borderRadius: 999,
-                            background: 'rgba(255,255,255,0.05)',
-                            backdropFilter: 'blur(10px)',
-                            border: '1px solid rgba(255,255,255,0.1)',
-                            color: '#ffffff',
-                            cursor: 'pointer',
-                            letterSpacing: '0.05em',
-                            textTransform: 'uppercase'
-                        }}
-                    >
-                        Reserve a Consultation
-                    </button>
-                </motion.div>
+                {/* Visual/Feature Side */}
+                {!isMobile && (
+                    <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4, duration: 1 }} style={{ flex: 0.8, display: 'flex', justifyContent: 'flex-end' }}>
+                        <div className="premium-glass float-animation" style={{ padding: 40, borderRadius: 32, width: '100%', maxWidth: 400, border: '1px solid rgba(255,255,255,0.1)' }}>
+                            <div style={{ marginBottom: 32 }}>
+                                <div style={{ fontSize: 12, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>Available Now</div>
+                                <div style={{ fontSize: 24, fontWeight: 800, color: '#fff' }}>Executive Booking</div>
+                            </div>
+                            
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+                                {[
+                                    { icon: MapPin, text: 'Nationwide Coverage', sub: 'Across Ghana' },
+                                    { icon: Clock, text: 'Real-time Tracking', sub: 'GPS Integrated' },
+                                    { icon: PhoneCall, text: '24/7 VIP Support', sub: 'Dedicated Staff' }
+                                ].map((item, idx) => (
+                                    <div key={idx} style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+                                        <div style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(212, 175, 55, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#D4AF37' }}>
+                                            <item.icon size={20} />
+                                        </div>
+                                        <div>
+                                            <div style={{ fontSize: 15, fontWeight: 700, color: '#fff' }}>{item.text}</div>
+                                            <div style={{ fontSize: 12, color: 'var(--muted)' }}>{item.sub}</div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            
+                            <div style={{ marginTop: 40, padding: 20, background: 'rgba(255,255,255,0.03)', borderRadius: 20, border: '1px solid rgba(255,255,255,0.05)' }}>
+                                <div style={{ fontSize: 11, color: '#D4AF37', fontWeight: 800, textTransform: 'uppercase', marginBottom: 4 }}>Current Status</div>
+                                <div style={{ fontSize: 14, color: '#fff', fontWeight: 600 }}>Fleet Available for Reservation</div>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
             </div>
 
-            {/* Scroll Indicator */}
-            {!isMobile && (
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                    style={{
-                        position: 'absolute',
-                        bottom: 40,
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        fontSize: 24,
-                        color: 'rgba(255,255,255,0.6)'
-                    }}
-                >
-                    ↓
-                </motion.div>
-            )}
-
-            <svg className="hero-deco" width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+            {/* Decorative SVG */}
+            <svg style={{ position: 'absolute', right: -100, bottom: -100, opacity: 0.05, pointerEvents: 'none' }} width="600" height="600" viewBox="0 0 600 600">
+                <circle cx="300" cy="300" r="250" stroke="url(#g1)" strokeWidth="40" fill="none" />
                 <defs>
                     <linearGradient id="g1" x1="0" x2="1">
                         <stop offset="0%" stopColor="#E30613" />
-                        <stop offset="100%" stopColor="#ff4444" />
+                        <stop offset="100%" stopColor="#D4AF37" />
                     </linearGradient>
                 </defs>
-                <circle cx="110" cy="110" r="90" stroke="url(#g1)" strokeWidth="6" opacity="0.18" />
             </svg>
         </section>
     )

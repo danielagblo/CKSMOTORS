@@ -76,7 +76,7 @@ export default function ProductCard({ item }) {
               <div style={{ color: 'var(--muted)', fontSize: 13, marginTop: 8, display: 'flex', gap: 16 }}>
                 <span>{item.specs?.seats || '-'} Seats</span>
                 <span>{item.specs?.transmission || 'Automatic'}</span>
-                <span>{item.specs?.fuelType || 'Electric'}</span>
+                <span>{item.specs?.fuelType || 'Petrol'}</span>
               </div>
             </div>
             <div style={{

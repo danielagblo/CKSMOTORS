@@ -470,7 +470,7 @@ export default function AdminModels() {
                   <label className="field-label">Fuel Type</label>
                   <select name="fuelType" value={form.specs?.fuelType} onChange={onSpecChange}>
                     <option value="">Select</option>
-                    <option value="Electric">Electric</option>
+
                     <option value="Petrol">Petrol</option>
                     <option value="Diesel">Diesel</option>
                     <option value="Hybrid">Hybrid</option>

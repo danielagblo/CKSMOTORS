@@ -32,24 +32,9 @@ export default function Navbar() {
   return (
     <motion.header className="nav" initial={{ y: -40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: .45 }}>
       <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-          <img
-            src="/favicon.png"
-            alt="CKS Motors"
-            style={{
-              width: 64,
-              height: 64,
-              objectFit: 'contain',
-              background: 'transparent',
-              display: 'block',
-              transform: 'scale(1.2)',
-              transformOrigin: 'center center'
-            }}
-          />
-          <div>
-            <div className="brand">CKS<span>Motors</span></div>
-            <div style={{ color: 'var(--muted)', fontSize: 12, lineHeight: 1 }}>Luxury Electric Vehicles</div>
-          </div>
+        <div>
+          <div className="brand">CKS<span>Motors</span></div>
+          <div style={{ color: 'var(--muted)', fontSize: 12, lineHeight: 1 }}>Luxury Logistics & Transport</div>
         </div>
       </Link>
       <nav style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
